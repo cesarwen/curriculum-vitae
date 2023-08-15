@@ -28,10 +28,8 @@ The project is meticulously organized into distinct folders, drawing inspiration
 │   │   ├── certificate_n_others.tex    # description of certificates and other projects
 │   │   ├── education.tex               # description of education
 │   │   ├── foreign_languages.tex       # description of foreign languages
-│   │   ├── objectives.tex              # description of objectives
 │   │   ├── personal.tex                # description of personal data
-│   │   ├── skills.tex                  # description of skill sets
-│   │   └── summary.tex                 # description of summary section
+│   │   └── skills.tex                  # description of skill sets
 │   ├── commands.tex                    # custom commands made in latex
 │   ├── css.tex                         # custom visual presentation of latex elements
 │   └── structure.tex                   # structure order for every section
