@@ -1,0 +1,46 @@
+\newcommand{\completeSection}[2]{\textbf{\Large #1}\\
+{\firaMono#2}
+\vspace{-0.8em}
+\\{{\color{cvDark}\rule{\linewidth}{2pt}}}
+\vspace{-0.5em}
+}
+
+\newcommand{\shortSection}[1]{
+\vspace{-1.5em}
+\section*{#1}
+\vspace{-1.8em}
+{{\color{cvDark}\rule{\linewidth}{2pt}}}
+\vspace{-1em}
+}
+
+\newcommand{\shortSubSection}[3]{
+    \textbf{\large #1}\\
+	\vspace{-1.3em}\\
+    \textbf{\small{\color{cvdate_blue}#2}}\\
+	\vspace{-1.5em}\\
+	{\small\textit{\color{cvDark}#3}}\\
+    \vspace{-2em}\\
+    {\color{cvLight}\hfill\rule{0.98\textwidth}{1pt}}
+}
+
+\newcommand{\experienceTitle}[2]{
+	\textbf{\large #1}\\
+	\vspace{-1.3em}\\
+	\textbf{\small{\color{cvdate_blue}#2}}
+}
+
+\newcommand{\dateDescription}[2]{\textbf{\firaMono#2} {#1}}
+
+\makeatletter
+\newcount\my@repeat@count
+\newcommand{\cvSkill}[1]{%
+	\begingroup
+	\my@repeat@count=\z@
+	\@whilenum\my@repeat@count<#1\do{\faIcon{circle}\advance\my@repeat@count\@ne}%
+	\my@repeat@count=\numexpr5-\z@\relax
+	\@whilenum\my@repeat@count>#1\do{\faIcon[regular]{circle}\advance\my@repeat@count\m@ne}%
+	\endgroup
+}
+\makeatother
+
+\newcommand{\education}[2]{#1 | #2}

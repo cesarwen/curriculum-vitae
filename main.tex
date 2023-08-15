@@ -1,0 +1,35 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+
+% Baseado no tutorial por Oliver Piters em lime_cv
+% https://olivierpieters.be/blog/2017/09/12/designing-a-cv-in-latex-part-1
+
+
+\documentclass[10pt,a4paper]{article}
+
+% Packages
+\usepackage[margin=0.5cm]{geometry} % Adjust margins
+\usepackage[utf8]{inputenc} % Unicode support
+\usepackage{enumitem} % Customize lists
+\usepackage{parskip} % No indentation for paragraphs
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{arydshln} % Load the arydshln package
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+
+% \usepackage{fontspec}
+
+\input{src/css.tex}
+\input{src/commands.tex}
+
+% \setmainfont{Times New Roman}
+% \newfontfamily\helveticafont{Helvetica}
+% \newfontfamily\monospacedfont{Courier New}
+\setlist[itemize]{topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt, leftmargin=0.4cm}
+
+\AtBeginDocument{\raggedright}
+\begin{document}
+\input{src/structure.tex}
+\end{document}
