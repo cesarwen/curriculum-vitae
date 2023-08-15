@@ -21,22 +21,25 @@ This project is separated in a comprehensive folders inspired by html architectu
 ### Folder Structure
 
 ```
-├── src
-│   ├── sections
-│   │   ├── work_experience
-│   │   ├── certificate_n_others.tex
-│   │   ├── education.tex
-│   │   ├── foreign_languages.tex
-│   │   ├── objectives.tex
-│   │   ├── personal.tex
-│   │   ├── skills.tex
-│   │   └── summary.tex
-│   ├── commands.tex
-│   ├── css.tex
-│   └── structure.tex
+├── src                                 # folder containing details latex code to be imported
+│   ├── sections                        # foder code for each section of the CV
+│   │   ├── work_experience             # foder containing work experience details
+│   │   │   ├── giorgio.tex             # description of experience at giorgio
+│   │   │   ├── index.tex               # index file for folder, managing other files in it
+│   │   │   └── rappi.tex               # description of experience at rappi
+│   │   ├── certificate_n_others.tex    # description of certificates and other projects
+│   │   ├── education.tex               # description of education
+│   │   ├── foreign_languages.tex       # description of foreign languages
+│   │   ├── objectives.tex              # description of objectives
+│   │   ├── personal.tex                # description of personal data
+│   │   ├── skills.tex                  # description of skill sets
+│   │   └── summary.tex                 # description of summary section
+│   ├── commands.tex                    # custom commands made in latex
+│   ├── css.tex                         # custom visual presentation of latex elements
+│   └── structure.tex                   # structure order for every section
 │── .gitignore
-│── main.pdf
-│── main.tex
+│── main.pdf                            # output pdf file
+│── main.tex                            # main file starting the tex program
 └── README.md
 ```
 
