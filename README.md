@@ -1,22 +1,20 @@
-# Cesar Wen Curriculum Vitae
-
-Using lated to create a simple, customizable and modifiable curriculum.
-
+# Cesar Wen Curriculum Vitae Template
+Crafting Simplicity, Customizability, and Flexibility with LaTeX
 ## Table of Contents
 
-- [Cesar Wen Curriculum Vitae](#cesar-wen-curriculum-vitae)
+- [Cesar Wen Curriculum Vitae Template](#cesar-wen-curriculum-vitae-template)
   - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
+  - [Introduction:](#introduction)
     - [Folder Structure](#folder-structure)
   - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
+    - [Prerequisites:](#prerequisites)
     - [Installation](#installation)
 
-## Introduction
+## Introduction:
 
-This project is created to both feature my own curriculum and inspire others to create simple yet effective documents while leveraging and learning latex syntax.
+This endeavor aims to showcase my personal curriculum vitae while also serving as an inspiration for individuals seeking to fashion straightforward and impactful documents through the utilization and comprehension of LaTeX syntax.
 
-This project is separated in a comprehensive folders inspired by html architecture providing an intuitive structure for both reading and editing.
+The project is meticulously organized into distinct folders, drawing inspiration from HTML architecture. This approach ensures an intuitive framework for seamless navigation, reading, and editing, enhancing both user experience and document management.
 
 ### Folder Structure
 
@@ -45,24 +43,29 @@ This project is separated in a comprehensive folders inspired by html architectu
 
 ## Getting Started
 
-### Prerequisites
+### Prerequisites:
 
-In order to compile this project you will need:
-- LaTeX distribution (Xetex or Luatex)
-- Fira Sans and Fira Mono as part of system fonts
+Before compiling this project, ensure that you have the following prerequisites in place:
 
-To edit the output you'll need a text editor such as:
+- A LaTeX distribution (XeTeX or LuaTeX) installed on your system.
+- Fira Sans and Fira Mono fonts available as part of your system's font collection.
+
+For editing the output, you will need a text editor. Some recommended options include:
+
 - Visual Studio Code
 - TeXstudio
 - Notepad ++
 
 ### Installation
 
-Here are the steps to compile:
+To successfully compile the project, follow these steps:
 
-1. Clone this repository
-2. Navigate to the project directory through terminal/command line
-3. run 
+- Clone this repository to your local machine.
+- Using your terminal or command line, navigate to the project directory.
+- Execute the following command to initiate the compilation process:
+
 ```
 xelatex -synctex=1 -interaction=nonstopmode main.tex
 ```
+
+By following these steps, you'll be able to compile the LaTeX project successfully and generate the desired output.
