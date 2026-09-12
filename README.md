@@ -75,6 +75,10 @@ with XeLaTeX whenever a pull request is merged into `main` (or a commit is pushe
 directly to `main`). It uses the full TeX Live environment and registers the Fira
 fonts required by the CV.
 
+To build manually, open **Actions → Build CV PDF → Run workflow**, select `main`,
+and click **Run workflow**. The manual trigger becomes available once this workflow
+is on the repository's default branch.
+
 Download the PDF from **Actions → Build CV PDF → a successful run → Artifacts**.
 The filename follows `cvCesarWen<BranchName>.pdf`, so builds on `main` produce
 `cvCesarWenmain.pdf`. Artifacts are retained for 90 days, subject to repository

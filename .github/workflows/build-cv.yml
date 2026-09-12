@@ -1,6 +1,7 @@
 name: Build CV PDF
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
 
@@ -19,6 +20,8 @@ jobs:
 
       - name: Compile CV with XeLaTeX
         uses: xu-cheng/latex-action@v4
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
         with:
           root_file: main.tex
           latexmk_use_xelatex: true
@@ -28,11 +31,10 @@ jobs:
             mkdir -p /usr/local/share/fonts/fira
             cp "$(kpsewhich -var-value=TEXMFDIST)"/fonts/opentype/public/fira/*.otf /usr/local/share/fonts/fira/
             fc-cache -f
-
-      - name: Name PDF for the branch
-        env:
-          BRANCH_NAME: ${{ github.ref_name }}
-        run: mv build/main.pdf "build/cvCesarWen${BRANCH_NAME}.pdf"
+          # Rename inside the container that owns the build directory.
+          post_compile: |
+            mv build/main.pdf "build/cvCesarWen${BRANCH_NAME}.pdf"
+            chmod a+r "build/cvCesarWen${BRANCH_NAME}.pdf"
 
       - name: Upload CV PDF
         uses: actions/upload-artifact@v7
