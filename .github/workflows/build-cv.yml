@@ -18,28 +18,29 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Set PDF filename
+        id: filename
+        shell: bash
+        run: |
+          branch=$(printf '%s' "$GITHUB_REF_NAME" | LC_ALL=C tr -c 'A-Za-z0-9._-' '-')
+          echo "stem=cvCesarWen${branch}" >> "$GITHUB_OUTPUT"
+
       - name: Compile CV with XeLaTeX
         uses: xu-cheng/latex-action@v4
-        env:
-          BRANCH_NAME: ${{ github.ref_name }}
         with:
           root_file: main.tex
           latexmk_use_xelatex: true
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build
+          args: -pdf -g -file-line-error -halt-on-error -interaction=nonstopmode -outdir=build -jobname=${{ steps.filename.outputs.stem }}
           # Register the TeX Live Fira fonts for fontspec's system font lookup.
           pre_compile: |
             mkdir -p /usr/local/share/fonts/fira
             cp "$(kpsewhich -var-value=TEXMFDIST)"/fonts/opentype/public/fira/*.otf /usr/local/share/fonts/fira/
             fc-cache -f
-          # Rename inside the container that owns the build directory.
-          post_compile: |
-            mv build/main.pdf "build/cvCesarWen${BRANCH_NAME}.pdf"
-            chmod a+r "build/cvCesarWen${BRANCH_NAME}.pdf"
 
       - name: Upload CV PDF
         uses: actions/upload-artifact@v7
         with:
-          name: cvCesarWen${{ github.ref_name }}.pdf
-          path: build/cvCesarWen${{ github.ref_name }}.pdf
+          name: ${{ steps.filename.outputs.stem }}.pdf
+          path: build/${{ steps.filename.outputs.stem }}.pdf
           if-no-files-found: error
           retention-days: 90
