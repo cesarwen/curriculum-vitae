@@ -2,3 +2,5 @@
 *.log
 *.out
 *.gz
+*.DS_Store
+*outputs/*
