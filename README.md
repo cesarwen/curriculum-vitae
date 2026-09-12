@@ -67,3 +67,15 @@ xelatex -synctex=1 -interaction=nonstopmode main.tex
 ```
 
 By following these steps, you'll be able to compile the LaTeX project successfully and generate the desired output.
+
+## Automated PDF builds
+
+The [Build CV PDF workflow](.github/workflows/build-cv.yml) compiles `main.tex`
+with XeLaTeX whenever a pull request is merged into `main` (or a commit is pushed
+directly to `main`). It uses the full TeX Live environment and registers the Fira
+fonts required by the CV.
+
+Download the PDF from **Actions → Build CV PDF → a successful run → Artifacts**.
+The filename follows `cvCesarWen<BranchName>.pdf`, so builds on `main` produce
+`cvCesarWenmain.pdf`. Artifacts are retained for 90 days, subject to repository
+retention limits. No additional secrets or release setup are required.
